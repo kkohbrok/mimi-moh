@@ -67,7 +67,7 @@ defined in more detail.
 
 ### Process Group Message
 
-```text
+~~~
 POST /group_operation
 Content-type: application/octet-stream
 
@@ -76,7 +76,7 @@ TLS serialized DSRequest
 
 Response
 TLS serialized DSResponse
-```
+~~~
 
 This REST endpoint provides access to all operations associated with an existing
 MLS group on the Delivery Service such as delivering application messages,
@@ -88,7 +88,7 @@ itself rather than an HTTP header, the path or any other query parameter.
 
 ### Welcome Information
 
-```text
+~~~
 GET /welcome_information
 Content-type: application/octet-stream
 
@@ -97,7 +97,7 @@ TLS serialized DSRequest
 
 Response
 TLS serialized DSResponse
-```
+~~~
 
 Through this endpoint, a provider can obtain information required to join the
 group for clients that have already received a Welcome message. The DS responds
@@ -106,7 +106,7 @@ group members.
 
 ### External Commit Information
 
-```text
+~~~
 GET /external_commit_information
 Content-type: application/octet-stream
 
@@ -115,14 +115,14 @@ TLS serialized DSRequest
 
 Response
 TLS serialized DSResponse
-```
+~~~
 
 Guest providers can use this endpoint to obtain information that allows a client
 to join a group without a Welcome message from an existing group member.
 
 ### Verification Key
 
-```text
+~~~
 GET /verification_key
 Content-type: application/octet-stream
 
@@ -131,7 +131,7 @@ TLS serialized VerificationKeyRequest
 
 Response
 TLS serialized VerificationKeyResponse
-```
+~~~
 
 This allows guest providers to obtain the verification key of this provider.
 This allows other providers to authenticate queries originating from this
@@ -139,7 +139,7 @@ provider.
 
 ### Deliver Connection Request
 
-```text
+~~~
 POST /connection_request
 Content-type: application/octet-stream
 
@@ -148,14 +148,14 @@ TLS serialized QueueingServiceRequest
 
 Response
 TLS serialized QueueingServiceResponse
-```
+~~~
 
 This endpoint lets other providers deliver connection establishment request to
 clients of this provider.
 
 ### Deliver Message
 
-```text
+~~~
 POST /deliver_message
 Content-type: application/octet-stream
 
@@ -164,14 +164,14 @@ TLS serialized QueueingServiceRequest
 
 Response
 TLS serialized QueueingServiceResponse
-```
+~~~
 
 An owning provider can deliver messages from one of its owned groups to this
 endpoint, if one of the group’s clients is associated with this provider.
 
 ### Connection KeyPackage Retrieval
 
-```text
+~~~
 POST /connection_key_packages
 Content-type: application/octet-stream
 
@@ -180,14 +180,14 @@ TLS serialized ConnectionKeyPackageRequest
 
 Response
 TLS serialized ConnectionKeyPackageResponse
-```
+~~~
 
 Allows another provider to retrieve KeyPackages for use during the connection
 establishment process between two users.
 
 ### Group KeyPackage Retrieval
 
-```text
+~~~
 POST /group_key_packages
 Content-type: application/octet-stream
 
@@ -196,7 +196,7 @@ TLS serialized GroupKeyPackageRequest
 
 Response
 TLS serialized GroupKeyPackageResponse
-```
+~~~
 
 Allows another provider to retrieve KeyPackages that can be used to add another
 user or one of its clients to an existing group.
